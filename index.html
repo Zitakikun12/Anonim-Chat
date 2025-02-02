@@ -5,41 +5,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kirim Pesan Ke Bapak</title>
     <style>
+        /* Reset dan Body Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             text-align: center;
-            margin: 50px;
+            padding: 20px;
         }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #4CAF50;
+        }
+
+        /* Styling untuk Textarea */
         textarea {
-            width: 80%;
+            width: 90%;
+            max-width: 500px;
             height: 150px;
+            padding: 12px;
             font-size: 16px;
-            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            resize: none;
+            outline: none;
+            transition: border-color 0.3s;
         }
+
+        textarea:focus {
+            border-color: #4CAF50;
+        }
+
+        /* Styling untuk Button */
         button {
-            padding: 10px 20px;
+            padding: 12px 24px;
             font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
             cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        button:active {
+            background-color: #388e3c;
+        }
+
+        /* Responsif untuk layar lebih kecil */
+        @media (max-width: 600px) {
+            textarea {
+                width: 100%;
+            }
+
+            button {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
 
-    <h2>Kirim Pesan Ke Bapak</h2>
-    <textarea id="pesan" placeholder="Tulis pesanmu di sini..."></textarea><br><br>
-    <button onclick="kirimPesan()">Kirim</button>
+    <div>
+        <h2>Kirim Pesan Ke Bapak</h2>
+        <textarea id="pesan" placeholder="Tulis pesanmu di sini..."></textarea><br><br>
+        <button onclick="kirimPesan()">Kirim</button>
+    </div>
 
     <script>
         function kirimPesan() {
-            var nomor = "6282293836391"; // Ganti dengan nomor WhatsApp tujuan
-            var pesan = document.getElementById("pesan").value;
+            const nomor = "6282293836391"; // Ganti dengan nomor WhatsApp tujuan
+            const pesan = document.getElementById("pesan").value.trim();
 
-            if (pesan.trim() === "") {
+            if (!pesan) {
                 alert("Pesan tidak boleh kosong!");
                 return;
             }
 
-            var url = "https://wa.me/" + nomor + "?text=" + encodeURIComponent(pesan);
+            const url = `https://wa.me/${nomor}?text=${encodeURIComponent(pesan)}`;
             window.open(url, "_blank");
         }
     </script>

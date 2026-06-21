@@ -1,0 +1,11 @@
+{
+  "name": "wibuku-premium",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "echo 'Static site ready'",
+    "obfuscate": "javascript-obfuscator public/index.html --output public/index.html --compact true --self-defending true"
+  },
+  "devDependencies": {
+    "javascript-obfuscator": "^4.0.2"
+  }
+}

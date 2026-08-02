@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -7,638 +6,130 @@
     <title>Premium Wibuku Murah | Jual Wibuku Premium Gift via DANA & QRIS</title>
     <meta name="description" content="Jual Wibuku Premium dengan harga hemat mulai Rp700/hari. Proses cepat via DANA atau QRIS. Langganan via Gift, hubungi WhatsApp sekarang!" />
     <link rel="canonical" href="https://wibuku-premium.vercel.app/" />
-
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Premium Wibuku Murah - Jual Wibuku Premium Gift via DANA & QRIS" />
     <meta property="og:description" content="Jual Wibuku Premium dengan harga mulai Rp700/hari. Proses cepat dan aman. Dapatkan gift sekarang!" />
     <meta property="og:url" content="https://wibuku-premium.vercel.app/" />
-    <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Wibuku+Premium" /> <!-- ganti dengan gambar asli -->
-
-    <!-- Twitter Card -->
+    <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Wibuku+Premium" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Premium Wibuku Murah - Jual Wibuku Premium" />
     <meta name="twitter:description" content="Harga mulai Rp700/hari. Bayar via DANA atau QRIS." />
-
-    <!-- JSON-LD untuk Product dan Offer -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src https://fonts.gstatic.com https://cdnjs.cloudflare.com; script-src 'unsafe-inline' 'unsafe-hashes' 'sha256-+c2yAOhBfWjFYLzO+hcJyLyM5nHfGhx9T/Wp4k69pKY='; img-src data: https://via.placeholder.com; connect-src 'self';" />
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "Premium Wibuku Gift – Jual Wibuku Premium",
-      "description": "Akses premium Wibuku dengan harga terjangkau. Tersedia paket 1, 3, 7, dan 30 hari.",
-      "brand": {
-        "@type": "Brand",
-        "name": "Wibuku Premium"
-      },
-      "offers": {
-        "@type": "AggregateOffer",
-        "priceCurrency": "IDR",
-        "lowPrice": "700",
-        "highPrice": "12000",
-        "offerCount": "4",
-        "availability": "https://schema.org/InStock",
-        "url": "https://wibuku-premium.vercel.app/"
-      }
-    }
+    {"@context":"https://schema.org","@type":"Product","name":"Premium Wibuku Gift – Jual Wibuku Premium","description":"Akses premium Wibuku dengan harga terjangkau. Tersedia paket 1, 3, 7, dan 30 hari.","brand":{"@type":"Brand","name":"Wibuku Premium"},"offers":{"@type":"AggregateOffer","priceCurrency":"IDR","lowPrice":"700","highPrice":"12000","offerCount":"4","availability":"https://schema.org/InStock","url":"https://wibuku-premium.vercel.app/"}}
     </script>
-
-    <!-- Font & Ikon -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-
     <style>
-        /* ===== GLOBAL ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(145deg, #f8faff 0%, #edf2fa 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1.5rem;
-            margin: 0;
-            color: #1f2937;
-            animation: bgShift 20s ease-in-out infinite alternate;
-        }
-        @keyframes bgShift {
-            0% { background: linear-gradient(145deg, #f8faff 0%, #edf2fa 100%); }
-            100% { background: linear-gradient(145deg, #eef5ff 0%, #dce6f5 100%); }
-        }
-
-        /* ===== CARD UTAMA ===== */
-        .card {
-            max-width: 720px;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border-radius: 40px;
-            padding: 2.2rem 2rem 2.5rem;
-            box-shadow: 0 20px 40px -16px rgba(0, 20, 40, 0.25),
-                        0 8px 24px -8px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-                        box-shadow 0.4s ease;
-            animation: cardIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        @keyframes cardIn {
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .card:hover {
-            transform: translateY(-6px) scale(1.005);
-            box-shadow: 0 32px 48px -20px rgba(0, 20, 40, 0.35);
-        }
-
-        /* ===== HEADER ===== */
-        .header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            margin-bottom: 1.8rem;
-        }
-        .badge-rocket {
-            background: linear-gradient(135deg, #ff7a2f, #ffb347);
-            padding: 0.4rem 1.6rem;
-            border-radius: 60px;
-            display: inline-block;
-            font-weight: 700;
-            font-size: 0.9rem;
-            letter-spacing: 0.3px;
-            color: #0b1a2e;
-            box-shadow: 0 4px 10px rgba(255, 122, 47, 0.25);
-            margin-bottom: 0.75rem;
-            animation: pulseGlow 3s infinite alternate;
-        }
-        @keyframes pulseGlow {
-            0% { box-shadow: 0 4px 10px rgba(255, 122, 47, 0.2); }
-            100% { box-shadow: 0 8px 24px rgba(255, 122, 47, 0.5); }
-        }
-        .badge-rocket i {
-            margin-right: 6px;
-            font-size: 0.95rem;
-        }
-        h1 {
-            font-size: 2.6rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            background: linear-gradient(145deg, #0b1e33, #1f3a5f);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            line-height: 1.1;
-            margin-bottom: 0.25rem;
-        }
-        .subhead {
-            font-size: 1rem;
-            font-weight: 500;
-            color: #1f3a5f;
-            background: rgba(0,0,0,0.02);
-            padding: 0.5rem 1.2rem;
-            border-radius: 40px;
-            display: inline-block;
-            border: 1px solid rgba(255,255,255,0.5);
-            margin-top: 0.1rem;
-        }
-        .subhead i {
-            color: #f97316;
-            margin-right: 6px;
-        }
-        .desc {
-            margin-top: 0.6rem;
-            font-size: 0.95rem;
-            color: #3a4b5e;
-            max-width: 90%;
-            line-height: 1.5;
-        }
-        .desc strong {
-            color: #0b1a2e;
-        }
-
-        /* ===== SOCIAL PROOF ===== */
-        .social-proof {
-            display: flex;
-            justify-content: center;
-            gap: 1.2rem;
-            flex-wrap: wrap;
-            background: #f1f6fd;
-            border-radius: 60px;
-            padding: 0.6rem 1.6rem;
-            margin: 0.8rem 0 1.5rem;
-            border: 1px solid #e3ebf5;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: #1f3a5f;
-        }
-        .social-proof i {
-            color: #fbbf24;
-            margin-right: 4px;
-        }
-
-        /* ===== PRICE GRID ===== */
-        .price-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.9rem;
-            margin: 1.2rem 0 1.8rem;
-        }
-        .price-item {
-            background: #f9fcff;
-            border-radius: 24px;
-            padding: 1rem 0.6rem;
-            text-align: center;
-            border: 1px solid #eef3f9;
-            transition: all 0.2s ease;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
-            cursor: pointer;
-        }
-        .price-item:hover {
-            border-color: #fbbf24;
-            background: #ffffff;
-            box-shadow: 0 8px 18px -8px rgba(251, 191, 36, 0.25);
-            transform: scale(1.03) translateY(-3px);
-        }
-        .price-item:active {
-            transform: scale(0.94) !important;
-        }
-        .price-item .days {
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: #1e2f44;
-            display: block;
-            margin-bottom: 4px;
-        }
-        .price-item .price {
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: #0b1a2e;
-            letter-spacing: -0.3px;
-        }
-        .price-item .price small {
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: #4b5e74;
-        }
-        .price-item .icon-tag {
-            display: block;
-            margin-bottom: 4px;
-            color: #f97316;
-            font-size: 1.1rem;
-        }
-        .price-item.highlight {
-            background: linear-gradient(135deg, #fef9e7, #fff8e0);
-            border-color: #fbbf24;
-            position: relative;
-        }
-        .price-item.highlight::after {
-            content: "⭐ best value";
-            position: absolute;
-            top: -10px;
-            right: 0px;
-            background: #fbbf24;
-            color: #0b1a2e;
-            font-size: 0.65rem;
-            font-weight: 700;
-            padding: 0.15rem 0.9rem;
-            border-radius: 40px;
-            letter-spacing: 0.3px;
-            box-shadow: 0 2px 8px rgba(251, 191, 36, 0.3);
-        }
-
-        /* ===== PAYMENT METHODS ===== */
-        .payment-methods {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            gap: 1.2rem 1.8rem;
-            background: #f1f6fd;
-            border-radius: 60px;
-            padding: 0.8rem 1.6rem;
-            margin: 1.5rem 0 1.8rem;
-            border: 1px solid #e3ebf5;
-        }
-        .payment-methods span {
-            font-weight: 500;
-            color: #1f3a5f;
-            font-size: 0.95rem;
-        }
-        .payment-methods i {
-            font-size: 1.3rem;
-            color: #1f3a5f;
-            margin: 0 4px;
-        }
-        .qris-badge {
-            background: #1f3a5f;
-            color: white;
-            padding: 0.2rem 0.9rem;
-            border-radius: 40px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.3px;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        .qris-badge:hover {
-            transform: scale(1.05);
-            background: #2c4d75;
-        }
-        .qris-badge:active {
-            transform: scale(0.94);
-        }
-
-        /* ===== CTA ===== */
-        .cta-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.8rem;
-            margin-top: 0.4rem;
-        }
-        .btn-wa {
-            background: #25D366;
-            border: none;
-            padding: 0.95rem 2.8rem;
-            border-radius: 60px;
-            font-weight: 600;
-            font-size: 1.2rem;
-            color: white;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            cursor: pointer;
-            transition: all 0.25s ease;
-            box-shadow: 0 8px 20px -6px rgba(37, 211, 102, 0.3);
-            border: 1px solid rgba(255,255,255,0.1);
-            text-decoration: none;
-            min-width: 220px;
-            justify-content: center;
-        }
-        .btn-wa i {
-            font-size: 1.5rem;
-        }
-        .btn-wa:hover {
-            transform: scale(1.04) translateY(-3px);
-            box-shadow: 0 12px 28px -6px #25D36699;
-        }
-        .btn-wa:active {
-            transform: scale(0.94) !important;
-        }
-        .btn-wa .fa-whatsapp {
-            color: white;
-        }
-
-        /* ===== FAQ ===== */
-        .faq-section {
-            margin: 2rem 0 1.2rem;
-            border-top: 1px solid #e8eff7;
-            padding-top: 1.5rem;
-        }
-        .faq-section h2 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #0b1a2e;
-            text-align: center;
-            margin-bottom: 1.2rem;
-        }
-        .faq-item {
-            background: #f9fcff;
-            border-radius: 20px;
-            padding: 0.8rem 1.2rem;
-            margin-bottom: 0.6rem;
-            border: 1px solid #eef3f9;
-            transition: 0.2s;
-            cursor: pointer;
-        }
-        .faq-item:hover {
-            border-color: #fbbf24;
-            background: #ffffff;
-        }
-        .faq-question {
-            font-weight: 600;
-            color: #1f3a5f;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .faq-question i {
-            transition: transform 0.3s;
-            color: #f97316;
-        }
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-            color: #4a5b6e;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-        .faq-item.active .faq-answer {
-            max-height: 200px;
-            padding-top: 0.6rem;
-        }
-        .faq-item.active .faq-question i {
-            transform: rotate(180deg);
-        }
-
-        /* ===== FOOTER ===== */
-        .footer {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.8rem 1.8rem;
-            font-size: 0.8rem;
-            color: #5b6f85;
-            border-top: 1px solid #e8eff7;
-            padding-top: 1.2rem;
-            margin-top: 0.8rem;
-        }
-        .footer a {
-            color: #1f3a5f;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-        .footer a:hover {
-            text-decoration: underline;
-            color: #f97316;
-        }
-        .footer i {
-            margin-right: 4px;
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 480px) {
-            .card { padding: 1.6rem 1.2rem 2rem; }
-            h1 { font-size: 2rem; }
-            .price-grid { grid-template-columns: 1fr 1fr; gap: 0.6rem; }
-            .price-item .price { font-size: 1.2rem; }
-            .payment-methods { flex-direction: column; gap: 0.3rem; padding: 1rem; }
-            .btn-wa { width: 100%; min-width: unset; font-size: 1rem; padding: 0.8rem 1.5rem; }
-            .badge-rocket { font-size: 0.7rem; padding: 0.2rem 1.2rem; }
-            .subhead { font-size: 0.85rem; }
-            .social-proof { font-size: 0.8rem; padding: 0.4rem 1rem; gap: 0.6rem; }
-            .desc { font-size: 0.85rem; max-width: 100%; }
-        }
-        @media (max-width: 380px) {
-            .price-grid { grid-template-columns: 1fr 1fr; gap: 0.4rem; }
-            .price-item { padding: 0.7rem 0.2rem; }
-            .price-item .price { font-size: 1rem; }
-        }
-
-        /* ===== TOAST ===== */
-        .custom-toast {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%) scale(0.9);
-            background: rgba(11, 26, 46, 0.95);
-            color: white;
-            padding: 0.9rem 2rem;
-            border-radius: 60px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            font-size: 1rem;
-            box-shadow: 0 20px 40px -12px rgba(0,0,0,0.5);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.12);
-            z-index: 999;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-            opacity: 0;
-            pointer-events: none;
-            letter-spacing: 0.2px;
-        }
-        .custom-toast.show {
-            opacity: 1;
-            transform: translateX(-50%) scale(1);
-        }
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:linear-gradient(145deg,#f8faff,#edf2fa);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:1.5rem;margin:0;color:#1f2937;animation:bgShift 20s ease-in-out infinite alternate}
+        @keyframes bgShift{0%{background:linear-gradient(145deg,#f8faff,#edf2fa)}100%{background:linear-gradient(145deg,#eef5ff,#dce6f5)}}
+        .card{max-width:720px;width:100%;background:rgba(255,255,255,0.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:40px;padding:2.2rem 2rem 2.5rem;box-shadow:0 20px 40px -16px rgba(0,20,40,0.25),0 8px 24px -8px rgba(0,0,0,0.08);border:1px solid rgba(255,255,255,0.6);transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.4s ease;animation:cardIn 0.8s cubic-bezier(0.34,1.56,0.64,1) forwards;opacity:0;transform:translateY(30px)}
+        @keyframes cardIn{to{opacity:1;transform:translateY(0)}}
+        .card:hover{transform:translateY(-6px) scale(1.005);box-shadow:0 32px 48px -20px rgba(0,20,40,0.35)}
+        .header{display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:1.8rem}
+        .badge-rocket{background:linear-gradient(135deg,#ff7a2f,#ffb347);padding:0.4rem 1.6rem;border-radius:60px;display:inline-block;font-weight:700;font-size:.9rem;letter-spacing:.3px;color:#0b1a2e;box-shadow:0 4px 10px rgba(255,122,47,0.25);margin-bottom:.75rem;animation:pulseGlow 3s infinite alternate}
+        @keyframes pulseGlow{0%{box-shadow:0 4px 10px rgba(255,122,47,0.2)}100%{box-shadow:0 8px 24px rgba(255,122,47,0.5)}}
+        .badge-rocket i{margin-right:6px;font-size:.95rem}
+        h1{font-size:2.6rem;font-weight:700;letter-spacing:-.02em;background:linear-gradient(145deg,#0b1e33,#1f3a5f);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.1;margin-bottom:.25rem}
+        .subhead{font-size:1rem;font-weight:500;color:#1f3a5f;background:rgba(0,0,0,0.02);padding:.5rem 1.2rem;border-radius:40px;display:inline-block;border:1px solid rgba(255,255,255,0.5);margin-top:.1rem}
+        .subhead i{color:#f97316;margin-right:6px}
+        .desc{margin-top:.6rem;font-size:.95rem;color:#3a4b5e;max-width:90%;line-height:1.5}
+        .desc strong{color:#0b1a2e}
+        .social-proof{display:flex;justify-content:center;gap:1.2rem;flex-wrap:wrap;background:#f1f6fd;border-radius:60px;padding:.6rem 1.6rem;margin:.8rem 0 1.5rem;border:1px solid #e3ebf5;font-size:.9rem;font-weight:500;color:#1f3a5f}
+        .social-proof i{color:#fbbf24;margin-right:4px}
+        .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin:1.2rem 0 1.8rem}
+        .price-item{background:#f9fcff;border-radius:24px;padding:1rem .6rem;text-align:center;border:1px solid #eef3f9;transition:all .2s ease;box-shadow:0 2px 6px rgba(0,0,0,0.02);cursor:pointer}
+        .price-item:hover{border-color:#fbbf24;background:#fff;box-shadow:0 8px 18px -8px rgba(251,191,36,0.25);transform:scale(1.03) translateY(-3px)}
+        .price-item:active{transform:scale(.94)!important}
+        .price-item .days{font-weight:600;font-size:.95rem;color:#1e2f44;display:block;margin-bottom:4px}
+        .price-item .price{font-weight:700;font-size:1.5rem;color:#0b1a2e;letter-spacing:-.3px}
+        .price-item .price small{font-size:.9rem;font-weight:500;color:#4b5e74}
+        .price-item .icon-tag{display:block;margin-bottom:4px;color:#f97316;font-size:1.1rem}
+        .price-item.highlight{background:linear-gradient(135deg,#fef9e7,#fff8e0);border-color:#fbbf24;position:relative}
+        .price-item.highlight::after{content:"⭐ best value";position:absolute;top:-10px;right:0;background:#fbbf24;color:#0b1a2e;font-size:.65rem;font-weight:700;padding:.15rem .9rem;border-radius:40px;letter-spacing:.3px;box-shadow:0 2px 8px rgba(251,191,36,0.3)}
+        .payment-methods{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:1.2rem 1.8rem;background:#f1f6fd;border-radius:60px;padding:.8rem 1.6rem;margin:1.5rem 0 1.8rem;border:1px solid #e3ebf5}
+        .payment-methods span{font-weight:500;color:#1f3a5f;font-size:.95rem}
+        .payment-methods i{font-size:1.3rem;color:#1f3a5f;margin:0 4px}
+        .qris-badge{background:#1f3a5f;color:#fff;padding:.2rem .9rem;border-radius:40px;font-size:.8rem;font-weight:600;letter-spacing:.3px;display:inline-flex;align-items:center;gap:5px;cursor:pointer;transition:all .2s}
+        .qris-badge:hover{transform:scale(1.05);background:#2c4d75}
+        .qris-badge:active{transform:scale(.94)}
+        .cta-wrapper{display:flex;flex-direction:column;align-items:center;gap:.8rem;margin-top:.4rem}
+        .btn-wa{background:#25D366;border:none;padding:.95rem 2.8rem;border-radius:60px;font-weight:600;font-size:1.2rem;color:#fff;display:inline-flex;align-items:center;gap:12px;cursor:pointer;transition:all .25s ease;box-shadow:0 8px 20px -6px rgba(37,211,102,0.3);border:1px solid rgba(255,255,255,0.1);text-decoration:none;min-width:220px;justify-content:center}
+        .btn-wa i{font-size:1.5rem}
+        .btn-wa:hover{transform:scale(1.04) translateY(-3px);box-shadow:0 12px 28px -6px #25D36699}
+        .btn-wa:active{transform:scale(.94)!important}
+        .btn-wa .fa-whatsapp{color:#fff}
+        .faq-section{margin:2rem 0 1.2rem;border-top:1px solid #e8eff7;padding-top:1.5rem}
+        .faq-section h2{font-size:1.3rem;font-weight:600;color:#0b1a2e;text-align:center;margin-bottom:1.2rem}
+        .faq-item{background:#f9fcff;border-radius:20px;padding:.8rem 1.2rem;margin-bottom:.6rem;border:1px solid #eef3f9;transition:.2s;cursor:pointer}
+        .faq-item:hover{border-color:#fbbf24;background:#fff}
+        .faq-question{font-weight:600;color:#1f3a5f;display:flex;justify-content:space-between;align-items:center}
+        .faq-question i{transition:transform .3s;color:#f97316}
+        .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;color:#4a5b6e;font-size:.95rem;line-height:1.5}
+        .faq-item.active .faq-answer{max-height:200px;padding-top:.6rem}
+        .faq-item.active .faq-question i{transform:rotate(180deg)}
+        .footer{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem 1.8rem;font-size:.8rem;color:#5b6f85;border-top:1px solid #e8eff7;padding-top:1.2rem;margin-top:.8rem}
+        .footer a{color:#1f3a5f;text-decoration:none;font-weight:500;transition:color .2s}
+        .footer a:hover{text-decoration:underline;color:#f97316}
+        .footer i{margin-right:4px}
+        @media(max-width:480px){.card{padding:1.6rem 1.2rem 2rem}h1{font-size:2rem}.price-grid{grid-template-columns:1fr 1fr;gap:.6rem}.price-item .price{font-size:1.2rem}.payment-methods{flex-direction:column;gap:.3rem;padding:1rem}.btn-wa{width:100%;min-width:unset;font-size:1rem;padding:.8rem 1.5rem}.badge-rocket{font-size:.7rem;padding:.2rem 1.2rem}.subhead{font-size:.85rem}.social-proof{font-size:.8rem;padding:.4rem 1rem;gap:.6rem}.desc{font-size:.85rem;max-width:100%}}
+        @media(max-width:380px){.price-grid{grid-template-columns:1fr 1fr;gap:.4rem}.price-item{padding:.7rem .2rem}.price-item .price{font-size:1rem}}
+        .custom-toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) scale(.9);background:rgba(11,26,46,0.95);color:#fff;padding:.9rem 2rem;border-radius:60px;font-family:'Inter',sans-serif;font-weight:500;font-size:1rem;box-shadow:0 20px 40px -12px rgba(0,0,0,0.5);display:flex;align-items:center;gap:12px;backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.12);z-index:999;transition:all .3s cubic-bezier(0.34,1.56,0.64,1);opacity:0;pointer-events:none;letter-spacing:.2px}
+        .custom-toast.show{opacity:1;transform:translateX(-50%) scale(1)}
     </style>
 </head>
 <body>
-
 <div class="card">
-    <!-- HEADER -->
     <div class="header">
         <span class="badge-rocket"><i class="fas fa-rocket"></i> Jual Wibuku Premium • </span>
         <h1>🚀 WIBU PREMIUM</h1>
         <span class="subhead"><i class="fas fa-gift"></i> Gift • Hemat • Instant</span>
-        <p class="desc">
-            <strong>Jual Wibuku Premium</strong> dengan harga terjangkau. 
-            Dapatkan akses penuh dan proses kilat via DANA/QRIS. 
-            Langganan gift sekarang!
-        </p>
+        <p class="desc"><strong>Jual Wibuku Premium</strong> dengan harga terjangkau. Dapatkan akses penuh dan proses kilat via DANA/QRIS. Langganan gift sekarang!</p>
     </div>
-
-    <!-- SOCIAL PROOF -->
     <div class="social-proof">
         <span><i class="fas fa-users"></i> 200+ pengguna bergabung</span>
         <span><i class="fas fa-star" style="color:#fbbf24;"></i> 4.9/5 rating</span>
         <span><i class="fas fa-clock"></i> Proses < 5 menit</span>
     </div>
-
-    <!-- DAFTAR HARGA -->
     <div class="price-grid">
-        <div class="price-item" data-price="700" data-days="1 Hari">
-            <span class="icon-tag"><i class="far fa-clock"></i></span>
-            <span class="days">1 Hari</span>
-            <span class="price">Rp700</span>
-        </div>
-        <div class="price-item" data-price="1800" data-days="3 Hari">
-            <span class="icon-tag"><i class="far fa-calendar-alt"></i></span>
-            <span class="days">3 Hari</span>
-            <span class="price">Rp1.800</span>
-        </div>
-        <div class="price-item" data-price="3800" data-days="7 Hari">
-            <span class="icon-tag"><i class="far fa-calendar-check"></i></span>
-            <span class="days">7 Hari</span>
-            <span class="price">Rp3.800</span>
-        </div>
-        <div class="price-item highlight" data-price="12000" data-days="30 Hari">
-            <span class="icon-tag"><i class="fas fa-crown"></i></span>
-            <span class="days">30 Hari</span>
-            <span class="price">Rp12.000</span>
-        </div>
+        <div class="price-item" data-price="700" data-days="1 Hari"><span class="icon-tag"><i class="far fa-clock"></i></span><span class="days">1 Hari</span><span class="price">Rp700</span></div>
+        <div class="price-item" data-price="1800" data-days="3 Hari"><span class="icon-tag"><i class="far fa-calendar-alt"></i></span><span class="days">3 Hari</span><span class="price">Rp1.800</span></div>
+        <div class="price-item" data-price="3800" data-days="7 Hari"><span class="icon-tag"><i class="far fa-calendar-check"></i></span><span class="days">7 Hari</span><span class="price">Rp3.800</span></div>
+        <div class="price-item highlight" data-price="12000" data-days="30 Hari"><span class="icon-tag"><i class="fas fa-crown"></i></span><span class="days">30 Hari</span><span class="price">Rp12.000</span></div>
     </div>
-
-    <!-- METODE PEMBAYARAN -->
     <div class="payment-methods">
         <span><i class="fas fa-mobile-alt"></i> DANA</span>
         <span><i class="fas fa-credit-card"></i> QRIS</span>
         <span class="qris-badge" id="qrisBadge"><i class="fas fa-qrcode"></i> QRIS ready</span>
         <span><i class="fas fa-bolt"></i> Proses cepat</span>
     </div>
-
-    <!-- CTA (HANYA WHATSAPP) -->
     <div class="cta-wrapper">
-        <a href="https://wa.me/6282293836391?text=Halo%2C%20saya%20minat%20Premium%20Wibuku%20Gift" target="_blank" class="btn-wa" id="waButton">
-            <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
-        </a>
+        <a href="https://wa.me/6282293836391?text=Halo%2C%20saya%20minat%20Premium%20Wibuku%20Gift" target="_blank" class="btn-wa" id="waButton"><i class="fab fa-whatsapp"></i> Pesan via WhatsApp</a>
     </div>
-
-    <!-- FAQ -->
     <div class="faq-section">
         <h2><i class="fas fa-question-circle" style="color:#f97316;"></i> Pertanyaan Umum</h2>
-        <div class="faq-item active">
-            <div class="faq-question">
-                <span>Bagaimana cara membayar?</span>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">Menerima pembayaran via DANA dan QRIS. Proses cepat dan aman</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>Apakah ini aman?</span>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">Ya, layanan ini memiliki <strong>banyak peminat</strong> banyak testimoni <strong> bisa dicek </strong>. Sudah banyak testimoni positif.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>Berapa lama proses aktivasi?</span>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">Setelah pembayaran dikonfirmasi, aktivasi kurang dari 5 menit. Layanan <strong>Wibuku Premium</strong> siap pakai.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>Bisa untuk hadiah (gift)?</span>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">Tentu! Kami menyediakan paket gift untuk <strong>Premium Wibuku</strong>. Cukup beri tahu id tujuan.</div>
-        </div>
+        <div class="faq-item active"><div class="faq-question"><span>Bagaimana cara membayar?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer">Menerima pembayaran via DANA dan QRIS. Proses cepat dan aman</div></div>
+        <div class="faq-item"><div class="faq-question"><span>Apakah ini aman?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer">Ya, layanan ini memiliki <strong>banyak peminat</strong> banyak testimoni <strong>bisa dicek</strong>. Sudah banyak testimoni positif.</div></div>
+        <div class="faq-item"><div class="faq-question"><span>Berapa lama proses aktivasi?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer">Setelah pembayaran dikonfirmasi, aktivasi kurang dari 5 menit. Layanan <strong>Wibuku Premium</strong> siap pakai.</div></div>
+        <div class="faq-item"><div class="faq-question"><span>Bisa untuk hadiah (gift)?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer">Tentu! Kami menyediakan paket gift untuk <strong>Premium Wibuku</strong>. Cukup beri tahu id tujuan.</div></div>
     </div>
-
-    <!-- FOOTER (HANYA WHATSAPP & AMAN) -->
     <div class="footer">
         <a href="https://wa.me/6282293836391" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-        <span><i class="fas fa-lock"></i> 100% aman </span>
+        <span><i class="fas fa-lock"></i> 100% aman</span>
     </div>
 </div>
-
-<!-- ===== JAVASCRIPT INTERAKSI ===== -->
 <script>
-    (function() {
-        // ---- TOAST ----
-        function showToast(message, icon = '✨') {
-            const existing = document.querySelector('.custom-toast');
-            if (existing) existing.remove();
-
-            const toast = document.createElement('div');
-            toast.className = 'custom-toast';
-            toast.innerHTML = `<span style="font-size:1.2rem;">${icon}</span> ${message}`;
-            document.body.appendChild(toast);
-
-            requestAnimationFrame(() => {
-                toast.classList.add('show');
-            });
-
-            setTimeout(() => {
-                toast.classList.remove('show');
-                setTimeout(() => toast.remove(), 400);
-            }, 3000);
-        }
-
-        // ---- PRICE ITEMS ----
-        document.querySelectorAll('.price-item').forEach(item => {
-            item.addEventListener('click', function() {
-                const days = this.dataset.days || 'paket';
-                const price = this.dataset.price || '';
-                showToast(`💰 ${days} Rp${price} — siap pesan?`, '✨');
-            });
-        });
-
-        // ---- QRIS BADGE ----
-        document.getElementById('qrisBadge').addEventListener('click', function() {
-            showToast('💳 QRIS & DANA tersedia. Proses cepat!', '✅');
-        });
-
-        // ---- WHATSAPP BUTTON ----
-        document.getElementById('waButton').addEventListener('click', function(e) {
-            showToast('📱 Membuka WhatsApp...', '📲');
-        });
-
-        // ---- FAQ ACCORDION ----
-        document.querySelectorAll('.faq-item').forEach(item => {
-            const question = item.querySelector('.faq-question');
-            question.addEventListener('click', function() {
-                const isActive = item.classList.contains('active');
-                // Tutup semua
-                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-                if (!isActive) {
-                    item.classList.add('active');
-                }
-            });
-        });
-
-        // ---- FOOTER LINK ----
-        document.querySelectorAll('.footer a').forEach(link => {
-            link.addEventListener('click', function(e) {
-                // Biarkan link WhatsApp berfungsi normal
-                if (this.href.includes('wa.me')) return;
-                e.preventDefault();
-                showToast('🔗 ' + this.innerText.trim(), '🌐');
-            });
-        });
-
-        console.log('🚀 Premium Wibuku — SEO & marketing siap! (Media sosial selain WhatsApp dihapus)');
-    })();
+(function(){'use strict';
+function t(e,i){let o=document.querySelector('.custom-toast');o&&o.remove();let n=document.createElement('div');n.className='custom-toast',n.innerHTML='<span style="font-size:1.2rem;">'+(i||'✨')+'</span> '+e,document.body.appendChild(n),requestAnimationFrame(()=>{n.classList.add('show')}),setTimeout(()=>{n.classList.remove('show'),setTimeout(()=>n.remove(),400)},3e3)}
+document.querySelectorAll('.price-item').forEach(e=>{e.addEventListener('click',function(){t('💰 '+this.dataset.days+' Rp'+this.dataset.price+' — siap pesan?','✨')})});
+let q=document.getElementById('qrisBadge');q&&q.addEventListener('click',function(){t('💳 QRIS & DANA tersedia. Proses cepat!','✅')});
+let w=document.getElementById('waButton');w&&w.addEventListener('click',function(){t('📱 Membuka WhatsApp...','📲')});
+document.querySelectorAll('.faq-item').forEach(e=>{let o=e.querySelector('.faq-question');o&&o.addEventListener('click',function(){let n=e.classList.contains('active');document.querySelectorAll('.faq-item').forEach(r=>r.classList.remove('active'));n||e.classList.add('active')})});
+document.querySelectorAll('.footer a').forEach(e=>{e.addEventListener('click',function(o){if(this.href.includes('wa.me'))return;o.preventDefault(),t('🔗 '+this.innerText.trim(),'🌐')})});
+})();
 </script>
-
 </body>
 </html>

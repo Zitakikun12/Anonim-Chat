@@ -1,4 +1,6 @@
 {
+  "outputDirectory": ".",
+  "buildCommand": "echo 'Build selesai'",
   "headers": [
     {
       "source": "/(.*)",
